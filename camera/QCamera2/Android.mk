@@ -91,12 +91,18 @@ LOCAL_HEADER_LIBRARIES += libsystem_headers
 LOCAL_HEADER_LIBRARIES += libhardware_headers
 LOCAL_HEADER_LIBRARIES += display_headers
 
+ifneq (,$(filter $(TRINKET),$(TARGET_BOARD_PLATFORM)))
+LOCAL_C_INCLUDES += \
+        system/core/libion/kernel-headers \
+        system/core/libion/include
+endif
+
 #HAL 1.0 Include paths
 LOCAL_C_INCLUDES += \
         $(LOCAL_PATH)/HAL
 
 ifeq ($(TARGET_COMPILE_WITH_MSM_KERNEL),true)
-LOCAL_HEADER_LIBRARIES += generated_kernel_headers
+LOCAL_HEADER_LIBRARIES := generated_kernel_headers
 endif
 ifeq ($(TARGET_TS_MAKEUP),true)
 LOCAL_CFLAGS += -DTARGET_TS_MAKEUP
@@ -117,6 +123,9 @@ LOCAL_SHARED_LIBRARIES := liblog libhardware libutils libcutils libdl libsync
 LOCAL_SHARED_LIBRARIES += libmmcamera_interface libmmjpeg_interface libui libcamera_metadata
 LOCAL_SHARED_LIBRARIES += libqdMetaData libqservice libbinder
 LOCAL_SHARED_LIBRARIES += libcutils libdl
+ifneq (,$(filter $(TRINKET),$(TARGET_BOARD_PLATFORM)))
+LOCAL_SHARED_LIBRARIES += libion
+endif
 ifeq ($(USE_DISPLAY_SERVICE),true)
 LOCAL_SHARED_LIBRARIES += android.frameworks.displayservice@1.0 libhidlbase
 else
