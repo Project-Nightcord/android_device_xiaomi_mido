@@ -37,10 +37,6 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     camera.msm8953
 
-# Fingerprint
-PRODUCT_PACKAGES += \
-    android.hardware.biometrics.fingerprint@2.1-service.xiaomi_vince
-
 PRODUCT_PACKAGES += \
     liblzma.vendor:64
 

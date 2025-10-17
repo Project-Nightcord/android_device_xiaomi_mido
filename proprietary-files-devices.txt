@@ -20,7 +20,6 @@ vendor/etc/acdbdata/QRD/QRD_workspaceFile.qwsp
 
 # Fingerprint (FPC)
 -vendor/lib64/hw/fingerprint.default.so:vendor/lib64/hw/fingerprint.msm8953.so;DISABLE_DEPS
--vendor/lib64/com.fingerprints.extension@1.0.so;DISABLE_DEPS
 
 # Fingerprint (Goodix)
 etc/firmware/goodix_firmware.bin:vendor/firmware/goodix_firmware.bin
@@ -31,7 +30,6 @@ etc/firmware/goodix_firmware.bin:vendor/firmware/goodix_firmware.bin
 # Fingerprint (Goodix HAL) - from daisy
 -vendor/lib64/hw/gf_fingerprint.default.so;DISABLE_DEPS
 -vendor/lib64/libvendor.goodix.hardware.fingerprint@1.0-service.so;DISABLE_DEPS
--vendor/lib64/libvendor.goodix.hardware.fingerprint@1.0.so;DISABLE_DEPS
 
 # Firmware (Audio)
 etc/firmware/tas2557_uCDSP.bin:vendor/firmware/tas2557_uCDSP.bin
