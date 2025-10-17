@@ -81,7 +81,6 @@
 -vendor/lib/libmmcamera_thread_services.so;DISABLE_DEPS
 -vendor/lib/libmmcamera_tintless_algo.so;DISABLE_DEPS
 -vendor/lib/libmmcamera_tintless_bg_pca_algo.so;DISABLE_DEPS
--vendor/lib/libmmcamera_trueportrait_lib.so;DISABLE_DEPS
 -vendor/lib/libmmcamera_tuning.so;DISABLE_DEPS
 -vendor/lib/libmmcamera_tuning_lookup.so;DISABLE_DEPS
 -vendor/lib/libmmcamera_ubifocus_lib.so;DISABLE_DEPS
