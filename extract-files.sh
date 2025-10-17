@@ -8,6 +8,17 @@
 
 function blob_fixup() {
     case "${1}" in
+        vendor/lib/libchromaflash.so \
+        | vendor/lib/libgf_algo.so \
+        | vendor/lib/libgf_ca.so \
+        | vendor/lib/libgf_hal.so \
+        | libmmcamera_hdr_gb_lib.so \
+        | liboptizoom.so \
+        | libseemore.so \
+        | libtrueportrait.so \
+        | libubifocus.so )
+            "${PATCHELF}" --replace-needed "libstdc++.so" "libstdc++_vendor.so" "${2}"
+            ;;
         vendor/lib/libmmcamera_tuning.so)
             "${PATCHELF}" --remove-needed "libmm-qcamera.so" "${2}"
             ;;
@@ -19,6 +30,11 @@ function blob_fixup() {
             "${PATCHELF}" --replace-needed "libvendor.goodix.hardware.fingerprint@1.0.so" "vendor.goodix.hardware.fingerprint@1.0.so" "${2}"
             ;;
     esac
+
+    # For all ELF files
+    if [[ "${1}" =~ ^.*(\.so|\/bin\/.*)$ ]]; then
+        "${PATCHELF}" --replace-needed "libstdc++.so" "libstdc++_vendor.so" "${2}"
+    fi
 }
 
 # If we're being sourced by the common script that we called,
