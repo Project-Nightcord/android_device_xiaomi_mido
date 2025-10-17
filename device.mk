@@ -25,6 +25,13 @@ PRODUCT_PACKAGES += \
 TARGET_SCREEN_HEIGHT := 2160
 TARGET_SCREEN_WIDTH := 1080
 
+# Fingerprint
+PRODUCT_PACKAGES += \
+    android.hardware.biometrics.fingerprint@2.3-service.xiaomi \
+    com.fingerprints.extension@1.0.vendor \
+    liblzma.vendor \
+    vendor.goodix.hardware.fingerprint@1.0.vendor
+
 # Screen density
 PRODUCT_AAPT_PREF_CONFIG := xxhdpi
 
