@@ -96,6 +96,8 @@
 -vendor/lib/libmmjpeg.so;DISABLE_DEPS
 -vendor/lib/libmmqjpeg_codec.so;DISABLE_DEPS
 -vendor/lib/libmmqjpegdma.so;DISABLE_DEPS
+-vendor/lib/libmpbase.so;DISABLE_DEPS
+-vendor/lib/libllvd_smore.so;DISABLE_DEPS
 -vendor/lib/libois_lc898122.so;DISABLE_DEPS
 -vendor/lib/liboptizoom.so;DISABLE_DEPS
 -vendor/lib/libqomx_jpegdec.so;DISABLE_DEPS
