@@ -1,11 +1,13 @@
-# Fpc Fingerprint
-/data/fpc(/.*)?					u:object_r:fpc_data_file:s0
-/dev/socket/fpce(/.*)?				u:object_r:fpce_socket:s0
+# Fingerprint data
+/dev/socket/fpce(/.*)?                          u:object_r:fingerprint_socket:s0
+/data/fpc(/.*)?                                 u:object_r:fingerprint_data_file:s0
+/data/gf_data(/.*)?                             u:object_r:fingerprint_data_file:s0
+/data/vendor/goodix(/.*)?                       u:object_r:fingerprint_vendor_data_file:s0
+/persist/data/gxfp(/.*)?                        u:object_r:fingerprint_data_file:s0
 
-# Goodix Fingerprint
-/dev/goodix_fp					u:object_r:gx_fpd_device:s0
-/data/gf_data(/.*)?                             u:object_r:gx_fpd_data_file:s0
-/persist/data/gxfp(/.*)?			u:object_r:gx_fpd_data_file:s0
+# Fingerprint device
+/dev/goodix_fp                                  u:object_r:fingerprint_device:s0
+/sys/devices(/platform)?/soc/soc:fpc1020(/.*)?  u:object_r:fingerprint_sysfs:s0
 
 # HALs
-/(vendor|system/vendor)/bin/hw/android\.hardware\.biometrics\.fingerprint@2\.1-service\.xiaomi_vince	u:object_r:hal_fingerprint_default_exec:s0
+/(vendor|system/vendor)/bin/hw/android\.hardware\.biometrics\.fingerprint-service\.xiaomi      u:object_r:hal_fingerprint_default_exec:s0

@@ -8,9 +8,7 @@ on boot
 
 # Fingerprint
 on boot
-    chown system system /dev/goodix_fp
-    chmod 0644 /dev/goodix_fp
-
+    # add for fpc 
     chown system system /sys/devices/platform/soc/soc:fpc1020/compatible_all
     chmod 0664 /sys/devices/platform/soc/soc:fpc1020/compatible_all
     chown system system /sys/devices/platform/soc/soc:fpc1020/irq
@@ -21,6 +19,10 @@ on boot
     chmod 0660 /sys/devices/platform/soc/soc:fpc1020/wakeup_enable
     chown system system /sys/devices/platform/soc/soc:fpc1020/fingerdown_wait
     chmod 0660 /sys/devices/platform/soc/soc:fpc1020/fingerdown_wait
+
+on post-fs-data
+    mkdir /data/vendor/goodix 0770 system system
+    mkdir /data/vendor/fpc 0770 system system
 
 # IR
 on boot
