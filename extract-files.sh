@@ -11,8 +11,12 @@ function blob_fixup() {
         vendor/lib/libmmcamera_tuning.so)
             "${PATCHELF}" --remove-needed "libmm-qcamera.so" "${2}"
             ;;
+        vendor/lib64/hw/gf_fingerprint.goodix.default.so)
+            "${PATCHELF}" --replace-needed "libvendor.goodix.hardware.fingerprint@1.0.so" "vendor.goodix.hardware.fingerprint@1.0.so" "${2}"
+            ;;
         vendor/lib64/libvendor.goodix.hardware.fingerprint@1.0-service.so)
             "${PATCHELF}" --remove-needed "libprotobuf-cpp-lite.so" "${2}"
+            "${PATCHELF}" --replace-needed "libvendor.goodix.hardware.fingerprint@1.0.so" "vendor.goodix.hardware.fingerprint@1.0.so" "${2}"
             ;;
     esac
 }
