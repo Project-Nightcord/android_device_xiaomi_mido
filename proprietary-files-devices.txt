@@ -19,7 +19,7 @@ vendor/etc/acdbdata/QRD/QRD_workspaceFile.qwsp
 -vendor/lib64/hw/consumerir.default.so:vendor/lib64/hw/consumerir.msm8953.so;DISABLE_DEPS
 
 # Fingerprint (FPC)
--vendor/lib64/hw/fingerprint.default.so:vendor/lib64/hw/fingerprint.fpc.default.so;DISABLE_DEPS
+-vendor/lib64/hw/fingerprint.default.so:vendor/lib64/hw/fingerprint.fpc.default.so;FIX_SONAME
 
 # Fingerprint (Goodix)
 etc/firmware/goodix_firmware.bin:vendor/firmware/goodix_firmware.bin
