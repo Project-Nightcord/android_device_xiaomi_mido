@@ -8,6 +8,10 @@ on boot
 
 # Fingerprint
 on boot
+    # add for goodix 
+    chown system system /dev/goodix_fp
+    chmod 0644 /dev/goodix_fp
+
     # add for fpc 
     chown system system /sys/devices/platform/soc/soc:fpc1020/compatible_all
     chmod 0664 /sys/devices/platform/soc/soc:fpc1020/compatible_all
