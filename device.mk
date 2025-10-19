@@ -28,9 +28,10 @@ TARGET_SCREEN_WIDTH := 1080
 # Fingerprint
 PRODUCT_PACKAGES += \
     android.hardware.biometrics.fingerprint-service.xiaomi \
-    com.fingerprints.extension@1.0.vendor \
-    liblzma.vendor \
-    vendor.goodix.hardware.fingerprint@1.0.vendor
+    liblzma.vendor:64
+
+PRODUCT_COPY_FILES += \
+    frameworks/native/data/etc/android.hardware.fingerprint.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.fingerprint.xml
 
 # Screen density
 PRODUCT_AAPT_PREF_CONFIG := xxhdpi
@@ -43,12 +44,6 @@ PRODUCT_COPY_FILES += \
 # Camera
 PRODUCT_PACKAGES += \
     camera.msm8953
-
-PRODUCT_PACKAGES += \
-    liblzma.vendor:64
-
-PRODUCT_COPY_FILES += \
-    frameworks/native/data/etc/android.hardware.fingerprint.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.fingerprint.xml
 
 # Input
 PRODUCT_COPY_FILES += \

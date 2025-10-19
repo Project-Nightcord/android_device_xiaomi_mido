@@ -15,6 +15,10 @@ bluetooth.sco.disable_enhanced_connection=true
 # Xiaomi vince - Encryption
 ro.crypto.volume.contents_mode=aes-256-xts
 
+# Fingerprint
+persist.vendor.fingerprint.type=rear
+persist.qfp=false
+
 # Xiaomi vince - SoC
 ro.soc.manufacturer=Qualcomm
 ro.soc.model=MSM8953
