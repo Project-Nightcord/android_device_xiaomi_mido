@@ -13,6 +13,6 @@ prebuilt_etc {
 prebuilt_etc {
     name: "init.xiaomi.device.rc",
     src: "etc/init.xiaomi.device.rc",
-    sub_dir: "init",
+    sub_dir: "init/hw",
     vendor: true,
 }

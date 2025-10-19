@@ -18,24 +18,26 @@ vendor/etc/acdbdata/QRD/QRD_workspaceFile.qwsp
 # Consumer IR
 -vendor/lib64/hw/consumerir.default.so:vendor/lib64/hw/consumerir.msm8953.so;DISABLE_DEPS
 
-# Fingerprint (FPC)
--vendor/lib64/hw/fingerprint.default.so:vendor/lib64/hw/fingerprint.fpc.default.so;FIX_SONAME
+# Fingerprint (FPC) - from sakura
+vendor/lib64/hw/fingerprint.default.so:vendor/lib64/hw/fingerprint.fpc.default.so;FIX_SONAME
 
 # Fingerprint (Goodix)
-etc/firmware/goodix_firmware.bin:vendor/firmware/goodix_firmware.bin
--lib64/libgf_algo.so:vendor/lib64/libgf_algo.so;DISABLE_DEPS
--lib64/libgf_ca.so:vendor/lib64/libgf_ca.so;DISABLE_DEPS
--lib64/libgf_hal.so:vendor/lib64/libgf_hal.so;DISABLE_DEPS
+system/etc/firmware/goodix_firmware.bin:vendor/firmware/goodix_firmware.bin
+lib64/libgf_algo.so:vendor/lib64/libgf_algo.so
+lib64/libgf_hal.so:vendor/lib64/libgf_hal.so
+
+# Fingerprint (Goodix) - from ugg
+lib64/libgf_ca.so:vendor/lib64/libgf_ca.so
 
 # Fingerprint (Goodix HAL) - from daisy
--vendor/lib64/hw/gf_fingerprint.default.so:vendor/lib64/hw/gf_fingerprint.goodix.default.so;DISABLE_DEPS
--vendor/lib64/libvendor.goodix.hardware.fingerprint@1.0-service.so;DISABLE_DEPS
+vendor/lib64/hw/gf_fingerprint.default.so:vendor/lib64/hw/gf_fingerprint.goodix.default.so;FIX_SONAME
+vendor/lib64/libvendor.goodix.hardware.fingerprint@1.0-service.so
 
 # Firmware (Audio)
-etc/firmware/tas2557_uCDSP.bin:vendor/firmware/tas2557_uCDSP.bin
+system/etc/firmware/tas2557_uCDSP.bin:vendor/firmware/tas2557_uCDSP.bin
 
 # Firmware (Touchscreen)
-etc/firmware/novatek_ts_fw.bin:vendor/firmware/novatek_ts_fw.bin
+system/etc/firmware/novatek_ts_fw.bin:vendor/firmware/novatek_ts_fw.bin
 
 # Sensors configs
 vendor/etc/sensors/sensor_def_qcomdev.conf

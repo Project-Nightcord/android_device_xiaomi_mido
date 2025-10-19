@@ -17,23 +17,23 @@ function blob_fixup() {
         | libseemore.so \
         | libtrueportrait.so \
         | libubifocus.so )
-            "${PATCHELF_0_18}" --replace-needed "libstdc++.so" "libstdc++_vendor.so" "${2}"
+            "${PATCHELF_0_17_2}" --replace-needed "libstdc++.so" "libstdc++_vendor.so" "${2}"
             ;;
         vendor/lib/libmmcamera_tuning.so)
-            "${PATCHELF}" --remove-needed "libmm-qcamera.so" "${2}"
+            "${PATCHELF_0_17_2}" --remove-needed "libmm-qcamera.so" "${2}"
             ;;
         vendor/lib64/hw/gf_fingerprint.goodix.default.so)
-            "${PATCHELF_0_18}" --replace-needed "libvendor.goodix.hardware.fingerprint@1.0.so" "vendor.goodix.hardware.fingerprint@1.0.so" "${2}"
+            "${PATCHELF_0_17_2}" --replace-needed "libvendor.goodix.hardware.fingerprint@1.0.so" "vendor.goodix.hardware.fingerprint@1.0.so" "${2}"
             ;;
         vendor/lib64/libvendor.goodix.hardware.fingerprint@1.0-service.so)
-            "${PATCHELF_0_18}" --remove-needed "libprotobuf-cpp-lite.so" "${2}"
-            "${PATCHELF_0_18}" --replace-needed "libvendor.goodix.hardware.fingerprint@1.0.so" "vendor.goodix.hardware.fingerprint@1.0.so" "${2}"
+            "${PATCHELF_0_17_2}" --remove-needed "libprotobuf-cpp-lite.so" "${2}"
+            "${PATCHELF_0_17_2}" --replace-needed "libvendor.goodix.hardware.fingerprint@1.0.so" "vendor.goodix.hardware.fingerprint@1.0.so" "${2}"
             ;;
     esac
 
     # For all ELF files
     if [[ "${1}" =~ ^.*(\.so|\/bin\/.*)$ ]]; then
-        "${PATCHELF_0_18}" --replace-needed "libstdc++.so" "libstdc++_vendor.so" "${2}"
+        "${PATCHELF_0_17_2}" --replace-needed "libstdc++.so" "libstdc++_vendor.so" "${2}"
     fi
 }
 

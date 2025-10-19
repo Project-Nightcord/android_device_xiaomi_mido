@@ -1,0 +1,2 @@
+# Fingerprint
+genfscon sysfs /devices/platform/soc/soc:fpc1020          u:object_r:sysfs_fingerprint:s0
