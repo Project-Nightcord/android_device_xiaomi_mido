@@ -4,9 +4,6 @@
 # SPDX-License-Identifier: Apache-2.0
 #
 
-# Display
-TARGET_USES_Q_DISPLAY_STACK := true
-
 # Platform
 TARGET_BOARD_PLATFORM := msm8953
 
