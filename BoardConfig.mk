@@ -20,7 +20,7 @@ TARGET_SCREEN_DENSITY := 440
 DEVICE_MANIFEST_FILE += $(DEVICE_PATH)/manifest.xml
 
 # Kernel
-TARGET_KERNEL_CONFIG := vince-perf_defconfig
+TARGET_KERNEL_CONFIG := vendor/vince-perf_defconfig
 TARGET_KERNEL_SOURCE := kernel/xiaomi/msm8953
 
 # Partitions
