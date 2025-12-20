@@ -7,7 +7,7 @@ ro.vendor.audio.sdk.fluencetype=none
 vendor.audio.feature.fluence.enable=false
 
 # Xiaomi vince - Camera
-persist.camera.HAL3.enabled=1
+persist.vendor.camera.HAL3.enabled=1
 
 # Xiaomi vince - Bluetooth
 bluetooth.sco.disable_enhanced_connection=true
