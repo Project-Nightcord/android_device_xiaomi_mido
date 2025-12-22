@@ -4,7 +4,7 @@ on boot
 
 # DT2W
 on boot
-    chown system system /sys/devices/platform/soc/78b7000.i2c/i2c-3/3-0020/input/input1/wake_gesture
+    chown system system /sys/devices/platform/soc/78b7000.i2c/i2c-3/3-0020/input/input4/wake_gesture
 
 # Fingerprint
 on boot

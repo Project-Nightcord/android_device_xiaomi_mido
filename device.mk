@@ -46,6 +46,9 @@ PRODUCT_PACKAGES += \
 PRODUCT_COPY_FILES += \
     $(call find-copy-subdir-files,*,$(LOCAL_PATH)/keylayout/,$(TARGET_COPY_OUT_VENDOR)/usr/keylayout/)
 
+# Power
+$(call soong_config_set,qtipower,tap_to_wake_node,/sys/devices/platform/soc/78b7000.i2c/i2c-3/3-0020/input/input4/wake_gesture)
+
 # Recovery
 PRODUCT_COPY_FILES += \
     vendor/xiaomi/vince/proprietary/vendor/bin/hvdcp_opti:$(TARGET_COPY_OUT_RECOVERY)/root/system/bin/hvdcp_opti

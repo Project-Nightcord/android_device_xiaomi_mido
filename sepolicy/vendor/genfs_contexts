@@ -1,5 +1,5 @@
 # DT2W
-genfscon sysfs /devices/platform/soc/78b7000.i2c/i2c-3/3-0020/input/input1/wake_gesture		u:object_r:sysfs_ts:s0
+genfscon sysfs /devices/platform/soc/78b7000.i2c/i2c-3/3-0020/input/input4/wake_gesture          u:object_r:sysfs_wakegesture:s0
 
 # K4.19 wakeup sources
 genfscon sysfs /devices/virtual/misc/msm_amrwbplus/wakeup u:object_r:sysfs_wakeup:s0
