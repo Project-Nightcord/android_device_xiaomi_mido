@@ -14,7 +14,7 @@ include device/xiaomi/mithorium-common/BoardConfigCommon.mk
 DEVICE_PATH := device/xiaomi/mido
 
 # Display
-TARGET_SCREEN_DENSITY := 440
+TARGET_SCREEN_DENSITY := 420
 
 # HIDL
 DEVICE_MANIFEST_FILE += $(DEVICE_PATH)/manifest.xml
@@ -31,6 +31,9 @@ BOARD_CACHEIMAGE_PARTITION_SIZE := 268435456
 BOARD_CACHEIMAGE_FILE_SYSTEM_TYPE := ext4
 BOARD_RECOVERYIMAGE_PARTITION_SIZE := 67108864
 BOARD_USERDATAIMAGE_PARTITION_SIZE := 55087422464
+
+# Init
+$(call soong_config_set,libinit,vendor_init_lib,//$(DEVICE_PATH):libinit_mido)
 
 # Properties
 TARGET_VENDOR_PROP += $(DEVICE_PATH)/vendor.prop

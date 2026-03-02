@@ -19,13 +19,15 @@ PRODUCT_PACKAGES += \
     HapticOverlay
 
 # Boot animation
-TARGET_SCREEN_HEIGHT := 2160
+TARGET_SCREEN_HEIGHT := 1920
 TARGET_SCREEN_WIDTH := 1080
 
 # Fingerprint
 PRODUCT_PACKAGES += \
     android.hardware.biometrics.fingerprint@2.3-service.xiaomi_mido \
-    liblzma.vendor:64
+    fakelogprint \
+    liblzma.vendor:64 \
+    libshims_gxfpd
 
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.fingerprint.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.fingerprint.xml
@@ -40,14 +42,13 @@ PRODUCT_COPY_FILES += \
 
 # Camera
 PRODUCT_PACKAGES += \
-    camera.msm8953
+    camera.msm8953 \
+    libcamshim \
+    libui_shim
 
 # Input
 PRODUCT_COPY_FILES += \
     $(call find-copy-subdir-files,*,$(LOCAL_PATH)/keylayout/,$(TARGET_COPY_OUT_VENDOR)/usr/keylayout/)
-
-# Power
-$(call soong_config_set,qtipower,tap_to_wake_node,/sys/devices/platform/soc/78b7000.i2c/i2c-3/3-0020/input/input4/wake_gesture)
 
 # Recovery
 PRODUCT_COPY_FILES += \

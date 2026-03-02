@@ -1,0 +1,44 @@
+// Copyright (C) 2024 The LineageOS Project
+//
+// SPDX-License-Identifier: Apache-2.0
+//
+
+
+// Camera
+cc_library_shared {
+    name: "libcamshim",
+    proprietary: true,
+    defaults: ["hidl_defaults"],
+    srcs: [
+        "libshims.cpp",
+    ],
+    cflags: [
+        "-Werror",
+        "-Wextra",
+        "-Wall",
+    ],
+    shared_libs: [
+        "libutils",
+    ],
+}
+
+cc_library_shared {
+    name: "libppeiscore_shim",
+    srcs: ["GraphicBuffer.cpp"],
+    shared_libs: ["libui"],
+    vendor: true
+}
+
+// Goodix
+cc_library_shared {
+    name: "fakelogprint",
+    srcs: ["fakelogprint.cpp"],
+    shared_libs: ["liblog"],
+    vendor: true
+}
+
+cc_library_shared {
+    name: "libshims_gxfpd",
+    srcs: ["gxfpd_shim.cpp"],
+    vendor: true
+}

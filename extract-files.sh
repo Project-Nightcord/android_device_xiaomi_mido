@@ -8,26 +8,21 @@
 
 function blob_fixup() {
     case "${1}" in
-        vendor/lib/libchromaflash.so \
-        | vendor/lib/libgf_algo.so \
-        | vendor/lib/libgf_ca.so \
-        | vendor/lib/libgf_hal.so \
-        | libmmcamera_hdr_gb_lib.so \
-        | liboptizoom.so \
-        | libseemore.so \
+        vendor/lib/libmmcamera_hdr_gb_lib.so \
+        | vendor/lib/libmpbase.so \
+        | vendor/lib/liboptizoom.so \
+        | vendor/lib/libseemore.so \
         | libtrueportrait.so \
-        | libubifocus.so )
+        | libubifocus.so \
+        | libchromaflash.so )
             "${PATCHELF_0_17_2}" --replace-needed "libstdc++.so" "libstdc++_vendor.so" "${2}"
+            ;;
+        vendor/lib/libmmcamera_ppeiscore.so)
+            "${PATCHELF_0_17_2}" --add_needed "libppeiscore_shim.so" "${2}"
+            "${PATCHELF_0_17_2}" --replace-needed "libGLESv2.so" "libGLESv2_adreno.so" "${2}"
             ;;
         vendor/lib/libmmcamera_tuning.so)
             "${PATCHELF_0_17_2}" --remove-needed "libmm-qcamera.so" "${2}"
-            ;;
-        vendor/lib64/hw/gf_fingerprint.goodix.default.so)
-            "${PATCHELF_0_17_2}" --replace-needed "libvendor.goodix.hardware.fingerprint@1.0.so" "vendor.goodix.hardware.fingerprint@1.0.so" "${2}"
-            ;;
-        vendor/lib64/libvendor.goodix.hardware.fingerprint@1.0-service.so)
-            "${PATCHELF_0_17_2}" --remove-needed "libprotobuf-cpp-lite.so" "${2}"
-            "${PATCHELF_0_17_2}" --replace-needed "libvendor.goodix.hardware.fingerprint@1.0.so" "vendor.goodix.hardware.fingerprint@1.0.so" "${2}"
             ;;
     esac
 

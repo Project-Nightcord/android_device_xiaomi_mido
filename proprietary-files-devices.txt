@@ -1,11 +1,10 @@
-# Not appended blobs from vince-user 8.1.0 OPM1.171019.019 V11.0.3.0.OEGCNXM release-keys
+# All unpinned blobs are extracted from xiaomi/mido/mido:7.0/NRD90M/V11.0.2.0.NCFMIXM:user/release-keys
 # daisy Package version: daisy-user 10 QKQ1.191002.002 V11.0.21.0.QDLMIXM release-keys
 # PAN Package version: Nokia/Panther_00WW/PAN_sprout:11/RKQ1.200928.002/00WW_3_240:user/release-keys
 # olive (Pie) Package version: olive-user 9 PKQ1.190319.001 V11.0.11.0.PCNMIXM release-keys
 # FP3 Package version: Fairphone/FP3/FP3:11/8901.4.A.0010/gms-f74c58a8:user/release-keys
 
 # Audio ACDB
-vendor/etc/acdbdata/adsp_avs_config.acdb
 vendor/etc/acdbdata/QRD/QRD_Bluetooth_cal.acdb
 vendor/etc/acdbdata/QRD/QRD_General_cal.acdb
 vendor/etc/acdbdata/QRD/QRD_Global_cal.acdb
@@ -13,31 +12,18 @@ vendor/etc/acdbdata/QRD/QRD_Handset_cal.acdb
 vendor/etc/acdbdata/QRD/QRD_Hdmi_cal.acdb
 vendor/etc/acdbdata/QRD/QRD_Headset_cal.acdb
 vendor/etc/acdbdata/QRD/QRD_Speaker_cal.acdb
-vendor/etc/acdbdata/QRD/QRD_workspaceFile.qwsp
 
 # Consumer IR
 -vendor/lib64/hw/consumerir.default.so:vendor/lib64/hw/consumerir.msm8953.so;DISABLE_DEPS
 
-# Fingerprint (FPC) - from vince
-vendor/lib64/hw/fingerprint.fpc.default.so;FIX_SONAME
-
-# Fingerprint (Goodix)
-system/etc/firmware/goodix_firmware.bin:vendor/firmware/goodix_firmware.bin
-lib64/libgf_algo.so:vendor/lib64/libgf_algo.so
-lib64/libgf_hal.so:vendor/lib64/libgf_hal.so
-
-# Fingerprint (Goodix) - from ugg
-lib64/libgf_ca.so:vendor/lib64/libgf_ca.so
-
-# Fingerprint (Goodix HAL) - from daisy
-vendor/lib64/hw/gf_fingerprint.default.so:vendor/lib64/hw/gf_fingerprint.goodix.default.so;FIX_SONAME
-vendor/lib64/libvendor.goodix.hardware.fingerprint@1.0-service.so
-
-# Firmware (Audio)
-system/etc/firmware/tas2557_uCDSP.bin:vendor/firmware/tas2557_uCDSP.bin
-
-# Firmware (Touchscreen)
-system/etc/firmware/novatek_ts_fw.bin:vendor/firmware/novatek_ts_fw.bin
+# Fingerprint
+bin/gx_fpd:vendor/bin/gx_fpd
+lib64/hw/fingerprint.goodix.so:vendor/lib64/hw/fingerprint.goodix.so;FIX_SONAME
+lib64/hw/fingerprint.searchf.so:vendor/lib64/hw/fingerprint.searchf.so
+lib64/hw/gxfingerprint.default.so:vendor/lib64/hw/gxfingerprint.default.so;FIX_SONAME
+lib64/libfp_client.so:vendor/lib64/libfp_client.so
+lib64/libfpnav.so:vendor/lib64/libfpnav.so
+lib64/libfpservice.so:vendor/lib64/libfpservice.so
 
 # Sensors configs
 vendor/etc/sensors/sensor_def_qcomdev.conf
