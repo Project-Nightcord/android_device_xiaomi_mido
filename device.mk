@@ -24,7 +24,7 @@ TARGET_SCREEN_WIDTH := 1080
 
 # Fingerprint
 PRODUCT_PACKAGES += \
-    android.hardware.biometrics.fingerprint-service.xiaomi \
+    android.hardware.biometrics.fingerprint@2.3-service.xiaomi_mido \
     liblzma.vendor:64
 
 PRODUCT_COPY_FILES += \
@@ -55,7 +55,8 @@ PRODUCT_COPY_FILES += \
 
 # Rootdir
 PRODUCT_PACKAGES += \
-    init.xiaomi.device.rc
+    init.xiaomi.device.rc \
+    init.goodix.sh
 
 # Soong namespaces
 PRODUCT_SOONG_NAMESPACES += \

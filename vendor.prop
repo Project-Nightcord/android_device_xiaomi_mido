@@ -15,7 +15,6 @@ bluetooth.sco.disable_enhanced_connection=true
 ro.crypto.volume.contents_mode=aes-256-xts
 
 # Fingerprint
-persist.vendor.fingerprint.type=rear
 persist.qfp=false
 
 # Xiaomi mido - SoC
