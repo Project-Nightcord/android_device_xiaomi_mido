@@ -51,7 +51,7 @@ $(call soong_config_set,qtipower,tap_to_wake_node,/sys/devices/platform/soc/78b7
 
 # Recovery
 PRODUCT_COPY_FILES += \
-    vendor/xiaomi/vince/proprietary/vendor/bin/hvdcp_opti:$(TARGET_COPY_OUT_RECOVERY)/root/system/bin/hvdcp_opti
+    vendor/xiaomi/mido/proprietary/vendor/bin/hvdcp_opti:$(TARGET_COPY_OUT_RECOVERY)/root/system/bin/hvdcp_opti
 
 # Rootdir
 PRODUCT_PACKAGES += \
@@ -63,4 +63,4 @@ PRODUCT_SOONG_NAMESPACES += \
     hardware/xiaomi
 
 # Inherit from vendor blobs
-$(call inherit-product, vendor/xiaomi/vince/vince-vendor.mk)
+$(call inherit-product, vendor/xiaomi/mido/mido-vendor.mk)

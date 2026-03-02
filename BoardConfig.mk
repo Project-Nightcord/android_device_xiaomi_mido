@@ -11,7 +11,7 @@ BOARD_VENDORIMAGE_FILE_SYSTEM_TYPE := ext4
 # Inherit from common mithorium-common
 include device/xiaomi/mithorium-common/BoardConfigCommon.mk
 
-DEVICE_PATH := device/xiaomi/vince
+DEVICE_PATH := device/xiaomi/mido
 
 # Display
 TARGET_SCREEN_DENSITY := 440
@@ -20,7 +20,7 @@ TARGET_SCREEN_DENSITY := 440
 DEVICE_MANIFEST_FILE += $(DEVICE_PATH)/manifest.xml
 
 # Kernel
-TARGET_KERNEL_CONFIG := vendor/vince-perf_defconfig
+TARGET_KERNEL_CONFIG := vendor/mido-perf_defconfig
 TARGET_KERNEL_SOURCE := kernel/xiaomi/msm8953
 
 # Partitions
@@ -46,4 +46,4 @@ BOARD_VENDOR_SEPOLICY_DIRS += $(DEVICE_PATH)/sepolicy/vendor
 BOARD_VENDOR_SEPOLICY_DIRS += $(DEVICE_PATH)/biometrics/sepolicy
 
 # Inherit from the proprietary version
-include vendor/xiaomi/vince/BoardConfigVendor.mk
+include vendor/xiaomi/mido/BoardConfigVendor.mk
