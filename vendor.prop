@@ -1,24 +1,23 @@
-# Xiaomi vince - Audio fluence
+# Xiaomi mido - Audio fluence
 persist.vendor.audio.fluence.speaker=true
 persist.vendor.audio.fluence.voicecall=true
-persist.vendor.audio.fluence.voicecomm=false
 persist.vendor.audio.fluence.voicerec=false
-ro.vendor.audio.sdk.fluencetype=none
-vendor.audio.feature.fluence.enable=false
+ro.vendor.audio.sdk.fluencetype=fluence
+vendor.audio.feature.fluence.enable=true
 
-# Xiaomi vince - Camera
+# Xiaomi mido - Camera
 persist.vendor.camera.HAL3.enabled=1
 
-# Xiaomi vince - Bluetooth
+# Xiaomi mido - Bluetooth
 bluetooth.sco.disable_enhanced_connection=true
 
-# Xiaomi vince - Encryption
+# Xiaomi mido - Encryption
 ro.crypto.volume.contents_mode=aes-256-xts
 
 # Fingerprint
 persist.vendor.fingerprint.type=rear
 persist.qfp=false
 
-# Xiaomi vince - SoC
+# Xiaomi mido - SoC
 ro.soc.manufacturer=Qualcomm
 ro.soc.model=MSM8953
